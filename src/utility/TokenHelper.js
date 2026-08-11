@@ -20,8 +20,8 @@ const DecodeToken=(token,req,res,next)=>{
 }
 const email= decoded['email']
 const user_id= decoded['user_id']
-req.email= email
-req.user_id= user_id
+req.headers.email= email
+req.headers.user_id= user_id
 
 next()
     } )

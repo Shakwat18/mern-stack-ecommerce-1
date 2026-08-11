@@ -28,10 +28,6 @@ await User.updateOne({email},{$set:{otp:"0"}})
 
 }
 
-const logoutService=()=>{
-
-}
-
 const createProfileService=()=>{
 
 }
@@ -45,5 +41,5 @@ const readProfileService=()=>{
 }
 
 module.exports={userLoginService,verifyLoginService,
-    createProfileService,logoutService,updateProfileService,readProfileService
+    createProfileService,updateProfileService,readProfileService
 }
