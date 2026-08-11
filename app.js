@@ -4,13 +4,13 @@ const hpp = require("hpp");
 const helmet = require("helmet");
 const { xss } = require("express-xss-sanitizer");
 const cors = require("cors");
-const cookieParser = require("cookie-parser");
+const cookieParser = require('cookie-parser');
 const path = require("node:path");
 const morgan = require("morgan");
-const { route } = require("./src/routes/api");
 const router = require("./src/routes/api");
 
 const app = express();
+app.use(cookieParser());
 
 // security
 app.use(hpp());
@@ -22,7 +22,7 @@ app.use(xss());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
-app.use(cookieParser());
+
 app.use(morgan("dev"));
 
 //route

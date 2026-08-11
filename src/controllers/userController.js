@@ -2,6 +2,12 @@ const { userLoginService, verifyLoginService } = require("../services/userServic
 
 const userLoginController = async(req, res) => {
 const result= await userLoginService(req)
+
+res.status(200).json(result)
+};
+
+const verifyLoginController =async (req, res) => {
+const result = await verifyLoginService(req)
 if(result["status"]== 'success'){
   const cookieOption={
     expires: new Date(Date.now()+24*60*60*1000),httpOnly:false
@@ -9,11 +15,6 @@ if(result["status"]== 'success'){
   res.cookie('token',result['token'],cookieOption)
   res.status(200).json(result)
 }
-res.status(200).json(result)
-};
-
-const verifyLoginController =async (req, res) => {
-const result = await verifyLoginService(req)
 res.status(200).json(result)
 
 };

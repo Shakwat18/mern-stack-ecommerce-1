@@ -12,17 +12,17 @@ const EncodeToken=(user_id,email)=>{
 }
 
 
-const DecodeToken=(req,res,next)=>{
- const key= process.env.TOKENKEY
- const token= req.cookie['token']
+const DecodeToken=(token,req,res,next)=>{
+ const key= process.env.TOKENKEY    
     jwt.verify(token,key,function (err, decoded){
+        if(err){
+    return res.status(200).json( {status:'failed',message: 'unAuthorized'})
+}
 const email= decoded['email']
 const user_id= decoded['user_id']
 req.email= email
 req.user_id= user_id
-if(err){
-    return res.status(200).json( {status:'failed',message: 'unAuthorized'})
-}
+
 next()
     } )
 
