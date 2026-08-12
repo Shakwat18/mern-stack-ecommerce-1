@@ -50,5 +50,19 @@ router.get(
   userController.userLogoutController,
 );
 
+router.post(
+  "/createProfileController", auth,
+  userController.createProfileController,
+);
+router.post(
+  "/updateProfileController", auth,
+  userController.updateProfileController,
+);
+router.get(
+  "/readProfileController", auth,
+  userController.readProfileController,
+);
+
+
 
 module.exports = router;

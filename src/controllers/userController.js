@@ -1,4 +1,4 @@
-const { userLoginService, verifyLoginService } = require("../services/userServices");
+const { userLoginService, verifyLoginService, saveProfileService, readProfileService } = require("../services/userServices");
 
 const userLoginController = async(req, res) => {
 const result= await userLoginService(req)
@@ -28,11 +28,22 @@ return  res.status(200).json({status:'success'})
 
 };
 
-const createProfileController = (req, res) => {};
+const createProfileController = async(req, res) => {
+  const result =await saveProfileService(req)
+  res.status(200).json(result)
 
-const updateProfileController = (req, res) => {};
+};
 
-const readProfileController = (req, res) => {};
+const updateProfileController =async (req, res) => {
+    const result =await saveProfileService(req)
+  res.status(200).json(result)
+};
+
+const readProfileController =async (req, res) => {
+  const result= await readProfileService(req)
+  res.status(200).json(result)
+
+};
 
 module.exports = {
   userLoginController,

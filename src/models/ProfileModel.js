@@ -2,7 +2,7 @@
 
 const mongoose= require('mongoose')
 const ProfileModel= new mongoose.Schema({
-    UserId:{
+    userId:{
         type:mongoose.Types.ObjectId,required:true['userId is  Required']
     },
     cu_add:{
