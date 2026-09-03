@@ -6,8 +6,8 @@ const invoiceModel= new mongoose.Schema({
     userId:{
 type: mongoose.Types.ObjectId,required:true['user Id is  Required']
     },
-    productId:{
-type: mongoose.Types.ObjectId,required:true['product Id is  Required']
+    payable:{
+type: Number,required:true['product Id is  Required']
     },
     cu_details:{
         type:String, required:true['customer details is required']

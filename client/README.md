@@ -19,3 +19,8 @@ If you are developing a production application, we recommend using TypeScript wi
 #package
 
 react-router react-toastify 
+
+
+# used package
+
+--axios bootstrap bootstrap html-react-parser js-cookie lottie-react react-bootstrap react-hot-toast react-image-gallery react-loading-skeleton react-router react-star-ratings sweetalert2 zustand

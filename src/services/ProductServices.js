@@ -306,6 +306,23 @@ const productDetailsService = async (req) => {
   }
 };
 
+const createReviewService=async(req)=>{
+  try{
+const userId= new mongoose.Types.ObjectId(req.headers['user_id'])
+const productId= new mongoose.Types.ObjectId(req.params['productId'])
+const reqbody= req.body
+reqbody.userId= userId
+reqbody.productId= productId
+
+await Review.create(reqbody)
+    return { status: "success"};
+
+  }
+   catch (error) {
+    return { status: "fail", data: error }.toString();
+  }
+}
+
 module.exports = {
   brandListService,
   categoryListService,
@@ -317,4 +334,5 @@ module.exports = {
   remarkService,
   productDetailsService,
   productReviewService,
+  createReviewService
 };

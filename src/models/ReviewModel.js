@@ -18,7 +18,7 @@ type: mongoose.Types.ObjectId,required:true['product Id is  Required']
     rating:{
         type:String, required:true['rating is required']
     }
-},{timeseries:true})
+},{timestamps:true})
 
 const Review= mongoose.model('reviews',reviewModel)
 

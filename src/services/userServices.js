@@ -53,9 +53,20 @@ const saveProfileService = async (req) => {
 };
 
 const readProfileService = async (req) => {
-  const userId = req.headers;
+ try {
+     const userId = new mongoose.Types.ObjectId(req.headers.user_id);
+const match={ $match: { userId } }
+const joinUser= {$lookup:{
+    from:"users",localField:"userId",foreignField:"_id",as:'user'
+}}
+const unWind={$unwind:"$user"}
+  const user = await Profile.aggregate([match,joinUser,unWind]);
 
-  const user = await Profile.aggregate([{ $match: { userId } }]);
+  return {status:"success", data:user}
+ } catch (error) {
+        return { status: "fail", data: error }.toString();
+
+ }
 };
 
 module.exports = {

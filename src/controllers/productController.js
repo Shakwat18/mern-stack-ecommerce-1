@@ -8,7 +8,8 @@ const {
   productDetailsService,
   categoryListService,
   brandListService,
-  productReviewService
+  productReviewService,
+  createReviewService
 } = require("../services/ProductServices");
 
 
@@ -60,6 +61,11 @@ const productsListByDetails = async (req, res) => {
 };
 
 
+const createReview=async(req,res)=>{
+    const result = await createReviewService(req);
+  return res.status(200).json(result); 
+}
+
 module.exports = {
     productsReviewList,
   productsListByBrand,
@@ -70,5 +76,6 @@ module.exports = {
   productsListBySimilar,
   brandList,
   categoryList,
-  sliderList
+  sliderList,
+  createReview
 };
