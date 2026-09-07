@@ -23,11 +23,11 @@ const AppHeader = () => {
               background: "linear-gradient(135deg, #6366f1, #8b5cf6)",
             }}
           >
-            S
+            GM
           </span>
 
           <span className="fs-5">
-            Shop<span className="text-primary">ify</span>
+            Grocery<span className="text-primary">Mart</span>
           </span>
         </Navbar.Brand>
 

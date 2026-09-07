@@ -1,44 +1,46 @@
+import React from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
-const BrandSkeleton = ({ count = 6 }) => {
+const BrandSkeleton = ({ count = 8 }) => {
   return (
-    <section className="w-full px-4 py-6">
-      <div className="mx-auto max-w-7xl">
-        {/* Section Title */}
-        <div className="mb-5">
-          <Skeleton width={150} height={24} />
-        </div>
+    <div className="container py-4">
+      <div className="row g-3 g-md-4">
+        {Array.from({ length: count }).map((_, index) => (
+          <div
+            className="col-6 col-sm-6 col-md-4 col-lg-3"
+            key={index}
+          >
+            <div className="card h-100 border-0 shadow-sm text-center overflow-hidden">
+              
+              {/* Brand Logo */}
+              <div className="p-3">
+                <Skeleton
+                  circle
+                  width={90}
+                  height={90}
+                />
+              </div>
 
-        {/* Brands */}
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-          {Array.from({ length: count }).map((_, index) => (
-            <div
-              key={index}
-              className="
-                flex
-                h-28
-                items-center
-                justify-center
-                rounded-xl
-                border
-                border-slate-200
-                bg-white
-                p-4
-                transition
-                dark:border-[#0d3d47]
-                dark:bg-[#04252c]
-              "
-            >
-              <Skeleton
-                width="75%"
-                height={55}
-              />
+              {/* Brand Info */}
+              <div className="card-body pt-0">
+                <Skeleton
+                  width="70%"
+                  height={20}
+                  className="mb-2"
+                />
+
+                <Skeleton
+                  width="45%"
+                  height={14}
+                />
+              </div>
+
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
-    </section>
+    </div>
   );
 };
 
