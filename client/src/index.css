@@ -3,6 +3,9 @@
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+.selector-for-some-widget {
+  box-sizing: content-box;
+}
 
 .navbar{
   display: flex;
