@@ -306,3 +306,4 @@ node server.js
 
 This project is for educational and development purposes.
 
+## packages express express-rate-limit express-mongo-sanitize hpp cors cookie-parser mongoose helmet express-xss-sanitizer jsonwebtoken nodemon bcrypt dotenv
