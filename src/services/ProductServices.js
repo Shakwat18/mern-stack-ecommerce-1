@@ -19,7 +19,7 @@ const brandListService = async (req) => {
 const sliderService = async (req) => {
   try {
     const data = await ProductsSlider.find();
-    return { status: "success", data };
+    return { status: "success", data:data };
   } catch (error) {
     return { status: "fail", data: error }.toString();
   }

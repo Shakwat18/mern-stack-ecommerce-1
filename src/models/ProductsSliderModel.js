@@ -1,31 +1,40 @@
 const mongoose = require("mongoose");
 
-const productsSliderModel = new mongoose.Schema(
+const productsSliderSchema = new mongoose.Schema(
   {
     title: {
       type: String,
-      required: true["title is  Required"],
+      required: [true, "Title is required"],
     },
+
     des: {
       type: String,
-      required: true["description is  Required"],
+      required: [true, "Description is required"],
     },
+
     price: {
       type: String,
-      required: true["price is  Required"],
+      required: [true, "Price is required"],
     },
+
     img: {
       type: String,
-      required: true["img is  Required"],
+      required: [true, "Image is required"],
     },
+
     productId: {
-      type: mongoose.Types.ObjectId,
-      required: true["product Id is  Required"],
+      type: mongoose.Schema.Types.ObjectId,
+      required: [true, "Product ID is required"],
     },
   },
-  { timeseries: true },
+  {
+    timestamps: true,
+  }
 );
 
-const ProductsSlider = mongoose.model("productSliders", productsSliderModel);
+const ProductsSlider = mongoose.model(
+  "ProductsSlider",
+  productsSliderSchema
+);
 
 module.exports = ProductsSlider;

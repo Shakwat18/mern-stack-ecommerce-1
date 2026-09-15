@@ -5,6 +5,9 @@ import "react-loading-skeleton/dist/skeleton.css";
 const CategoriesSkeleton = ({ count = 4}) => {
   return (
     <div className="container py-4">
+      <h3>
+        Top Categories
+      </h3>
       <div className="row g-4">
         {Array.from({ length: count }).map((_, index) => (
           <div
